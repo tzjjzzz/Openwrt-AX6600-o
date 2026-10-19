@@ -200,9 +200,10 @@ jobs:
           # 额外强制安装缺失的 python 依赖
           ./scripts/feeds install -f python3-pysocks python3-unidecode
 
-          # miniupnpd 2.3.11 已包含这两个修复，immortalwrt feed 里遗留的旧补丁会导致编译失败
+          # miniupnpd 2.3.11 已包含这些修复，immortalwrt feed 里遗留的旧补丁(020/030/040)会导致编译失败，只保留 010 和 900
           rm -f feeds/packages/net/miniupnpd/patches/020-descr-filter-fix.patch \
-                feeds/packages/net/miniupnpd/patches/030-allow-private-fix.patch
+                feeds/packages/net/miniupnpd/patches/030-allow-private-fix.patch \
+                feeds/packages/net/miniupnpd/patches/040-improve-logging.patch
 
 
       - name: Custom Packages
