@@ -186,3 +186,7 @@ UPDATE_VERSION() {
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 #UPDATE_VERSION "sing-box"
+
+#删除 immortalwrt feed 中遗留的 miniupnpd 旧补丁（2.3.11 上游已包含这两个修复，保留会导致补丁失败）
+rm -f ../feeds/packages/net/miniupnpd/patches/020-descr-filter-fix.patch \
+      ../feeds/packages/net/miniupnpd/patches/030-allow-private-fix.patch
