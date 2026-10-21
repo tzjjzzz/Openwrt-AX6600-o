@@ -74,7 +74,7 @@ if [[ "${WRT_PROFILE^^}" == "PLUS" ]]; then
 	UPDATE_PACKAGE "viking" "ones20250/packages" "main" "" "luci-app-wolultra"
 	UPDATE_PACKAGE "ddns-go" "sirpdboy/luci-app-ddns-go" "main"
 	#UPDATE_PACKAGE "luci-app-pushbot" "zzsj0928/luci-app-pushbot" "master"
-	UPDATE_PACKAGE "luci-app-wechatpush" "tzjjzzz/luci-app-wechatpush" "feat/wifi-wg-endpoint-traffic-split-ssh-port"
+	UPDATE_PACKAGE "luci-app-wechatpush" "tzjjzzz/luci-app-wechatpush" "master"
 	UPDATE_PACKAGE "luci-app-hotkeylimit" "tzjjzzz/luci-app-hotkeylimit" "main"
 
 
