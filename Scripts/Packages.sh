@@ -186,3 +186,12 @@ UPDATE_VERSION() {
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
 #UPDATE_VERSION "sing-box"
+
+#补回 2026-10-19 被移出 packages feed 的 libffi（python3 的 _ctypes 依赖它）。
+#源码核心和 feed 里都没有时才补，等源码仓库同步上游后会自动跳过，避免同名包重复。
+if [ ! -d ../package/libs/libffi ] && [ ! -d ../feeds/packages/libs/libffi ]; then
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    mkdir -p libffi
+    cp -f "$SCRIPT_DIR/libffi/Makefile" libffi/Makefile
+    echo "libffi: restored from Scripts/libffi (3.4.7)"
+fi
