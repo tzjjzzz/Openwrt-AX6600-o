@@ -65,7 +65,7 @@ env:
 jobs:
   core:
     name: ${{inputs.WRT_SOURCE}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       cache_prefix: ${{steps.initialize-values.outputs.cache_prefix}}
       legacy_cache_prefix: ${{steps.initialize-values.outputs.legacy_cache_prefix}}
@@ -407,7 +407,7 @@ jobs:
     name: Roll cache generations
     needs: core
     if: ${{ !inputs.WRT_TEST && needs.core.result == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     concurrency:
       group: wrt-cache-rollover-${{inputs.WRT_SOURCE}}-${{inputs.WRT_BRANCH}}
       cancel-in-progress: false
